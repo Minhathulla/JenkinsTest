@@ -23,9 +23,9 @@ pipeline{
             steps {
               echo "stage three running ..when with not condition"
               when {
-                  not {
-                   branch "master"
-                  }
+                 
+                   branch "main"
+                  
                   steps {
                     echo 'branch name is... ' + env.GIT_BRANCH
                   }
