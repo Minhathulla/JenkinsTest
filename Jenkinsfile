@@ -36,7 +36,7 @@ pipeline{
                stage('build_test'){
                     steps{
                        echo "parallel runnning in stage4;unit  test stage, mvn test  -Dsurefire.suiteXMLFile=testng.xml"
-                         mvn test  -Dsurefire.suiteXMLFile=testng.xml
+                         mvn test  -Dsurefire.suiteXMLFile='testng.xml'
                     }
                }
            }
