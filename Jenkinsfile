@@ -22,7 +22,7 @@ pipeline{
         stage ('three'){
             steps {
               echo "stage three running ..when with not condition"
-              when {
+              if (env.BRANCH_NAME ==~ /(dev|main)/) {
                  
                    branch "main"
                   
