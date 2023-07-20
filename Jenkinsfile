@@ -1,5 +1,5 @@
 pipeline{
-  agent any{
+  agent(map.agent ?: "any"){
       stages{
         stage('one'){
             steps {
