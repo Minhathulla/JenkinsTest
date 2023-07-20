@@ -22,12 +22,13 @@ pipeline{
         stage ('three'){
             steps {
               echo "stage three running ..when with not condition"
+              script{
               if(env.BRANCH_NAME ==~ /(dev|main)/) {
-                 stage ('threepointone'){
+                 
                    branch "main"
                   
                   steps {
-                    echo 'branch name is... ' + env.GIT_BRANCH
+                    echo "branch name is..."+ env.GIT_BRANCH
                   }
               }
             }
@@ -38,7 +39,7 @@ pipeline{
                  stage ('unit_test'){
                     steps{
                          echo "parallel runnning in stage4;unit  test stage,mvn clean install"
-                         sh  'mvn clean install'
+                         sh  "mvn clean install"
                     }
                }
                stage ('build_test'){
