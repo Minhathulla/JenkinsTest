@@ -39,7 +39,7 @@ pipeline{
                  stage ('unit_test'){
                     steps{
                          echo "parallel runnning in stage4;unit  test stage,mvn clean install"
-                         sh  "mvn clean install"
+                         bat  "mvn clean install"
                     }
                }
                stage ('build_test'){
